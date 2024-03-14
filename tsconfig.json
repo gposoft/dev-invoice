@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES2021",
+    "lib": [
+      "ES2021"
+    ],
+    "module": "commonjs",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noUnusedLocals": false, // indica que la variables locales nunca se usan
+    "noUnusedParameters": false, // indica que los parametros nunca se usan 
+    "strictPropertyInitialization": false // para que no me obligue a que las propiedades estén inicializadas
+  },
+  "exclude": [
+    "node_modules",
+    "vitest.config.ts"
+  ]
+}
