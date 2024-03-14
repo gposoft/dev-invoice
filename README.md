@@ -179,7 +179,13 @@
 [Repositorio - https://github.com/gposoft/dev-invoice](https://github.com/gposoft/dev-invoice)
 
 ```bash
-  clone https://github.com/gposoft/dev-invoice.git
+  git clone https://github.com/gposoft/dev-invoice.git
+
+  Developer 1
+    git checkout -b feature/dev-1-practice
+
+  Developer 2
+    git checkout -b feature/dev-2-practice
 ```
 
 Para poder correr el proyecto se debe hacer primero la instalación de los paquetes
