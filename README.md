@@ -256,7 +256,9 @@ const invoice = {
 
 ```
 
-## Update Remote -> Local
+## Update Remote -> Local (Solo en caso que requieras actualizar lo ultimo del repositorio)
+
+`Nota:` se debe tener cuidado ya que pudiera remplazar tus archivos, para evitar eso se debe revisar bien los cambios antes de actualizar 
 
 ```bash
   git branch
@@ -272,3 +274,11 @@ Para poder correr el proyecto se debe hacer primero la instalación de los paque
 ```bash
   npm install
 ```
+
+# Restaurar base de datos 
+
+<video controls width="900">
+    <source src="./documents/videos/respaldo.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de videos.
+</video>
+
