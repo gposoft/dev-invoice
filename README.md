@@ -28,7 +28,18 @@
 
 ### Create
 
+```ts
+//ejemplo
+const client = {
+  code: "200",
+  first_name: "Lopez",
+  second_name: "Martinez",
+  name: "Mariana",
+};
+```
+
 ```sql
+
   const input = {
     register: client,
   }
@@ -40,6 +51,16 @@
 ```
 
 ### Update
+
+```ts
+//ejemplo
+const client = {
+  code: "200",
+  first_name: "Lopez",
+  second_name: "Martinez",
+  name: "Mariana",
+};
+```
 
 ```sql
 
@@ -93,6 +114,22 @@
 
 ### Create
 
+```ts
+//ejemplo
+const invoice = {
+  id: "1",
+  state: "active",
+  folio: "F200",
+  date: "2024-03-14",
+  client_code: "200",
+  concept: "Mi primera factura...!",
+  details: [
+    { cant: 10, concept: "concepto 1", amount: 100.8 },
+    { cant: 1, concept: "concepto 2", amount: 1000.5 },
+  ],
+};
+```
+
 ```sql
   const input = {
     register: invoice,
@@ -105,6 +142,22 @@
 ```
 
 ### Update
+
+```ts
+//ejemplo
+const invoice = {
+  id: "1",
+  state: "active",
+  folio: "F200",
+  date: "2024-03-14",
+  client_code: "200",
+  concept: "Mi primera factura...!",
+  details: [
+    { cant: 10, concept: "concepto 1", amount: 100.8 },
+    { cant: 1, concept: "concepto 2", amount: 1000.5 },
+  ],
+};
+```
 
 ```sql
 
@@ -127,7 +180,7 @@
   const id = invoice.id
 
   -- Instrucción SQL
-  SELECT * from providers.invoice_get_by_id($1);
+  SELECT providers.invoice_get_by_id($1);
 
   -- Retorno: Array objeto de tipo invoice
 ```
@@ -139,7 +192,7 @@
   const state = "all" | "active" | "delete"
 
   -- Instrucción SQL
-  SELECT * from providers.invoice_get_by_all($1);
+  SELECT providers.invoice_get_by_all($1);
 
   -- Retorno: Array objeto de tipo invoice
 ```
@@ -154,7 +207,7 @@
   -- Instrucción SQL
   SELECT providers.invoice_update_state_by_id($1, $2);
 
-  -- Retorno: Array objeto de tipo invoice
+  -- Retorno: 1 : actualizo, 0 : no actualizo
 ```
 
 ## Arquitectura
@@ -184,7 +237,7 @@
   # entrar a la carpeta
   cd dev-invoice
 
-  #Crear la rama
+  #Crear la rama para no afectar la rama principal
 
   #Developer 1
   git checkout -b feature/dev-1-practice
