@@ -256,6 +256,17 @@ const invoice = {
 
 ```
 
+## Update Remote -> Local
+
+```bash
+  git branch
+  git checkout main
+  git pull origin main
+  git checkout feature/dev-3-practice
+  git merge main / git rebase main
+
+```
+
 Para poder correr el proyecto se debe hacer primero la instalación de los paquetes
 
 ```bash
