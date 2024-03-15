@@ -258,7 +258,7 @@ const invoice = {
 
 ## Update Remote -> Local (Solo en caso que requieras actualizar lo ultimo del repositorio)
 
-`Nota:` se debe tener cuidado ya que pudiera remplazar tus archivos, para evitar eso se debe revisar bien los cambios antes de actualizar 
+`Nota:` se debe tener cuidado ya que pudiera remplazar tus archivos, para evitar eso se debe revisar bien los cambios antes de actualizar
 
 ```bash
   git branch
@@ -275,4 +275,6 @@ Para poder correr el proyecto se debe hacer primero la instalación de los paque
   npm install
 ```
 
-# Restaurar base de datos 
+# Restaurar base de datos
+
+[Tutorial - https://youtu.be/\_b6dtciSDDE](https://youtu.be/_b6dtciSDDE)
