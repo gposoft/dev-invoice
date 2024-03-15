@@ -276,9 +276,3 @@ Para poder correr el proyecto se debe hacer primero la instalación de los paque
 ```
 
 # Restaurar base de datos 
-
-<video controls width="900">
-    <source src="./documents/videos/respaldo.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de videos.
-</video>
-
