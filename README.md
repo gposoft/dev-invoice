@@ -181,11 +181,26 @@
 ```bash
   git clone https://github.com/gposoft/dev-invoice.git
 
-  Developer 1
-    git checkout -b feature/dev-1-practice
+  # entrar a la carpeta
+  cd dev-invoice
 
-  Developer 2
-    git checkout -b feature/dev-2-practice
+  #Crear la rama
+
+  #Developer 1
+  git checkout -b feature/dev-1-practice
+
+  #Developer 2
+  git checkout -b feature/dev-2-practice
+```
+
+## Upload changes
+
+```bash
+
+  git add .
+  git commit -m "mensaje del commit"
+  git push origin feature/dev-1-practice
+
 ```
 
 Para poder correr el proyecto se debe hacer primero la instalación de los paquetes
