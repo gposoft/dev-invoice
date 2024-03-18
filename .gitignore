@@ -33,3 +33,10 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+#Excepciones Personalizadas
+/.env
+package-lock.json
+package.json
+migrations/20240314210730-SequelizePrueba.js
+configSequelize.js
