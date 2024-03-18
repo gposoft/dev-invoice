@@ -6,22 +6,22 @@
 export interface Client {
     id: string;
     code: string;
-    paterno: string;
-    materno: string;
-    nombre: string;
+    first_name: string;
+    second_name: string;
+    name: string;
 }
 
 export interface CreateClient {
-    id: string;
+    //id: string;
     code: string;
-    paterno: string;
-    materno: string;
-    nombre: string;
+    first_name: string;
+    second_name: string;
+    name: string;
 }
 
 export interface UpdateClient {
     code?: string;
-    paterno?: string;
-    materno?: string;
-    nombre?: string;
+    first_name?: string;
+    second_name?: string;
+    name?: string;
 }

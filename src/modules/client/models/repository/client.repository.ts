@@ -1,4 +1,4 @@
-import { Result } from "../commons/result.mode";
+import { Affected, Result } from "../commons/result.mode";
 import { Client, CreateClient, UpdateClient } from "../entity/client.entity";
 
 export interface ClientCreateRepository {
@@ -6,9 +6,9 @@ export interface ClientCreateRepository {
 }
 
 export interface ClientUpdateRepository {
-    execute(id: string, client: UpdateClient): Promise<Result<Client | null>>;
+    execute(id: string, client: UpdateClient): Promise<Result<Affected>>;
 }
 
 export interface ClientGetByCodeRepository {
-    execute(code: string): Promise<Result<Client[]>>;
+    execute(code: string): Promise<Result<Client | null>>;
 }

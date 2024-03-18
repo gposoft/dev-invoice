@@ -48,9 +48,9 @@ export class ClientCreateProvider implements ClientCreateRepository {
                 data: {
                     id: client.id,
                     code: client.code,
-                    paterno: client.paterno,
-                    materno: client.materno,
-                    nombre: client.nombre,
+                    first_name: client.first_name,
+                    second_name: client.second_name,
+                    name: client.name,
                 },
                 error: result.error,
             };
@@ -60,9 +60,9 @@ export class ClientCreateProvider implements ClientCreateRepository {
             data: {
                 id: client.id,
                 code: result.data?.code!,
-                paterno: result.data?.paterno!,
-                materno: result.data?.materno!,
-                nombre: result.data?.nombre!,
+                first_name: result.data?.first_name!,
+                second_name: result.data?.second_name!,
+                name: result.data?.name!,
             },
             error: null,
         };
