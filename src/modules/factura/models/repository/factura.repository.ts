@@ -5,7 +5,7 @@ export interface FacturaCreateRepository {
     execute(factura: CreateFactura): Promise<Result<Factura | null>>;
 }
 export interface FacturaUpdateRepository {
-    execute(factura: UpdateFactura): Promise<Result<Affected>>;
+    execute(id: string, factura: UpdateFactura): Promise<Result<Affected>>;
 }
 export interface FacturaGetsRepository {
     execute(): Promise<Result<Factura[]>>;
@@ -13,6 +13,6 @@ export interface FacturaGetsRepository {
 export interface FacturaGetByIdRepository {
     execute(id: string): Promise<Result<Factura | null>>;
 }
-export interface FacturaCreateRepository {
-    execute(state: UpdateStateById): Promise<Result<Affected>>;
+export interface UpdateStateByIdRepository {
+    execute(id: string, state: UpdateStateById): Promise<Result<Affected>>;
 }
