@@ -12,7 +12,7 @@ export interface Client {
 }
 
 export interface CreateClient {
-    //id: string;
+    id?: string;
     code: string;
     first_name: string;
     second_name: string;

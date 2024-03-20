@@ -5,7 +5,7 @@ import { connectPg } from "../../../../settings/db.setting";
 export class ClientGetByCodePgRepository implements ClientGetByCodeRepository {
     async execute(code: string): Promise<Result<Client | null>> {
         const values = [code];
-        const query = "SELECT * from store.client_get_by_id($1)";
+        const query = "SELECT * from store.client_get_by_code($1)";
         const customer: PoolClient = await connectPg.connect();
 
         let response: Result<Client | null>;

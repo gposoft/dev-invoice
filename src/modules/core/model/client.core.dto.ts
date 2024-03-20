@@ -7,7 +7,7 @@ export interface ClientDTO {
 }
 
 export interface CreateClientDTO {
-    id: string;
+    //id: string;
     code: string;
     paterno: string;
     materno: string;

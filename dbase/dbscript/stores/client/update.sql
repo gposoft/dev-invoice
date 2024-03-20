@@ -26,7 +26,7 @@ $$
 		FROM jsonb_each(dataset);
 	
 	   WITH dsrows AS ( 
-			UPDATE products.product
+			UPDATE store.client
 					SET 
 		     		code        = COALESCE(register.code, code),
 					first_name  = COALESCE(register.first_name, first_name),

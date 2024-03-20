@@ -46,7 +46,7 @@ export class ClientCreateProvider implements ClientCreateRepository {
             return {
                 status: "success",
                 data: {
-                    id: client.id,
+                    id: client.id!,
                     code: client.code,
                     first_name: client.first_name,
                     second_name: client.second_name,
@@ -58,7 +58,7 @@ export class ClientCreateProvider implements ClientCreateRepository {
         return {
             status: "success",
             data: {
-                id: client.id,
+                id: client.id!,
                 code: result.data?.code!,
                 first_name: result.data?.first_name!,
                 second_name: result.data?.second_name!,
