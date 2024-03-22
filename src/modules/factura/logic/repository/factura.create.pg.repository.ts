@@ -23,7 +23,7 @@ export class FacturCreatePgRepository implements FacturaCreateRepository {
         };
 
         const values = [param];
-        const query = "SELECT providers.invoice_create($1)";
+        const query = "SELECT store.invoice_create($1)";
 
         const client: PoolClient = await this.connectDb.connect();
         let response: Result<Factura | null>;

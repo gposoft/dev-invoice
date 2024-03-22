@@ -72,7 +72,7 @@ DECLARE
     result jsonb;
 BEGIN
 	
-	result := store.invoice_get_by_id(id);
+	result := store.invoice_get_by_id(_id);
     RETURN result;
 END
 $$;
