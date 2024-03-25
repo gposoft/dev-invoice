@@ -18,12 +18,26 @@ export class FacturCreatePgRepository implements FacturaCreateRepository {
     }
 
     async execute(factura: CreateFactura): Promise<Result<Factura | null>> {
+        const folioExistsQuery = "SELECT folio FROM store.invoice WHERE folio = $1";
+        const folioExistsValues = [factura.folio];
+
+        const folioExistsResult = await this.connectDb.query(folioExistsQuery, folioExistsValues);
+
+        if (folioExistsResult.rows.length > 0) {
+            // Si el código ya existe, devuelve un error
+            return {
+                status: "error",
+                data: null,
+                error: "El folio ya está en uso.",
+            };
+        }
+
         const param = {
             register: factura,
         };
 
         const values = [param];
-        const query = "SELECT store.invoice_create($1)";
+        const query = "SELECT providers.invoice_create($1)";
 
         const client: PoolClient = await this.connectDb.connect();
         let response: Result<Factura | null>;

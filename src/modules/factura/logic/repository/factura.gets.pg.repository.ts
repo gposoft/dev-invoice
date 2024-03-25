@@ -5,7 +5,7 @@ import { connectPg } from "../../../../settings/db.setting";
 
 export class FacturaGetsPgRepository implements FacturaGetsRepository {
     async execute(): Promise<Result<Factura[]>> {
-        const query = "SELECT * FROM store.invoice_gets()";
+        const query = "SELECT * FROM providers.invoice_gets()";
         const client: PoolClient = await connectPg.connect();
 
         let response: Result<Factura[]>;

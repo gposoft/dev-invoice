@@ -11,7 +11,7 @@ export class FacturaUpdatePgRepository implements FacturaUpdateRepository {
         };
 
         const values = [id, param];
-        const query = "SELECT store.invoice_update($1,$2)";
+        const query = "SELECT providers.invoice_update($1,$2)";
 
         const client: PoolClient = await connectPg.connect();
         let response: Result<Affected>;

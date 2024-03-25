@@ -50,13 +50,19 @@ async function init() {
     // } else {
     //     console.log("Se encontro un error:", result.error);
     //     console.log("Se actualizara el dato");
-    //     const updateService = FacturaInjection.update();
-    //     const resultUpdate = await updateService.execute("001", { concept: "NUEVA ACTUALIZACION DE LA FACTURA" });
-    //     console.log("Afectaciones:", resultUpdate.data);
+    // const updateService = FacturaInjection.update();
+    // const resultUpdate = await updateService.execute("001", { concept: "NUEVA ACTUALIZACION DE LA FACTURA" });
+    // console.log("Afectaciones:", resultUpdate.data);
     // }
+    /*
     const getClient = await FacturaInjection.get();
     const resultGetById = await getClient.execute("001");
     console.table(resultGetById.data);
+    */
+    const updateStateService = FacturaInjection.updateState();
+    const resultUpdate = await updateStateService.execute("001", "delete");
+    console.log("Afectaciones:", resultUpdate.data);
+    console.log(resultUpdate.error);
 }
 
 init();

@@ -36,7 +36,7 @@ $$
 DECLARE
     result numeric;
 BEGIN
-    result := store.client_update(_id, _state);
+    result := store.invoice_state_by_id(_id, _state);
     RETURN result;
 END
 $$;

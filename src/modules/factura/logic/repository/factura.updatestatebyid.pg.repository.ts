@@ -4,16 +4,11 @@ import { PoolClient, QueryResult } from "pg";
 import { connectPg } from "../../../../settings/db.setting";
 
 export class FacturaUpdateStateByIdPgRepository implements UpdateStateByIdRepository {
-    async execute(id: string, state: UpdateStateById): Promise<Result<number>> {
-        const param = {
-            register: state,
-        };
-
-        const values = [id, param];
-        const query = "SELECT store.invoice_update_state_by_id($1,$2)";
+    async execute(id: string, state: string): Promise<Result<number>> {
+        const values = [id, state];
+        const query = "SELECT providers.invoice_state_by_id($1,$2)";
 
         const client: PoolClient = await connectPg.connect();
-
         let response: Result<Affected>;
 
         try {

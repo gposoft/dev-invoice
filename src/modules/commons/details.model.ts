@@ -1,5 +1,5 @@
 export interface Detail {
-    //id: string;
+    id?: string;
     cant: number;
     concept: string;
     amount: number;

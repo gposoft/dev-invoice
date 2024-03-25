@@ -1,15 +1,15 @@
 import { PoolClient, QueryResult } from "pg";
 import { Result } from "../../../commons/result.mode";
-import { Factura, FacturaGetByIdRepository } from "../../models";
+import { Factura, FacturaStateGetAllRepository } from "../../models";
 import { connectPg } from "../../../../settings/db.setting";
 
-export class FacturaGetByIdPgRepository implements FacturaGetByIdRepository {
-    async execute(id: string): Promise<Result<Factura | null>> {
-        const values = [id];
-        const query = "SELECT * FROM providers.invoice_get_by_id($1)";
+export class FacturaStateGetAllPgRepository implements FacturaStateGetAllRepository {
+    async execute(state: string): Promise<Result<Factura[]>> {
+        const values = [state];
+        const query = "SELECT * from providers.invoice_get_all($1)";
         const client: PoolClient = await connectPg.connect();
 
-        let response: Result<Factura | null>;
+        let response: Result<Factura[]>;
 
         try {
             const result: QueryResult = await client.query(query, values);
@@ -17,16 +17,17 @@ export class FacturaGetByIdPgRepository implements FacturaGetByIdRepository {
 
             response = {
                 status: "success",
-                data: dataset[0],
+                data: dataset,
                 error: null,
             };
         } catch (error: any) {
             response = {
                 status: "error",
-                data: null,
+                data: [],
                 error: error.message,
             };
         }
+
         return response;
     }
 }

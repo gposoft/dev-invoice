@@ -14,5 +14,8 @@ export interface FacturaGetByIdRepository {
     execute(id: string): Promise<Result<Factura | null>>;
 }
 export interface UpdateStateByIdRepository {
-    execute(id: string, state: UpdateStateById): Promise<Result<Affected>>;
+    execute(id: string, state: string): Promise<Result<Affected>>;
+}
+export interface FacturaStateGetAllRepository {
+    execute(state: string): Promise<Result<Factura[]>>;
 }
